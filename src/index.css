@@ -1,5 +1,6 @@
 :root {
-    --navbar-height: 80px; 
+    --navbar-height: 80px;
+    --active-color: #4CC663;
 }
 
 * {
@@ -35,6 +36,10 @@ html {
     flex-direction: column;
 }
 
+.logo-link {
+    text-decoration: none;
+}
+
 .logo {
     display: flex;
     margin-top: 20px;
@@ -58,9 +63,18 @@ html {
     margin-left: 30px;
 }
 
+.menu-text-link {
+    text-decoration: none;
+}
+
 .menu-text {
     color: #EAEAEA;
     font-size: 22px;
+    display: inline-block;
+}
+
+.menu-text.active {
+    color: var(--active-color);
 }
 
 .menu-list {
@@ -78,6 +92,14 @@ html {
     font-size: 16px;
     text-decoration: none;
     color: #929292;
+}
+
+.menu-item-text:hover {
+    color: var(--active-color);
+}
+
+.menu-item-text.active {
+    color: var(--active-color);
 }
 
 
