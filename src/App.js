@@ -1,13 +1,16 @@
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Content from "./components/Content";
+import { useState } from "react"
 
 function App() {
+  const [item, setItem] = useState('home')
+
   return (
     <div className="app">
-      <Sidebar />
+      <Sidebar activeInfo={[item, setItem]} />
       <div className="app_content">
-        <Navbar />
+        <Navbar activeInfo={[item, setItem]} />
         <Content />
       </div>
     </div>
