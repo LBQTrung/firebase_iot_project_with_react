@@ -11,7 +11,7 @@ function App() {
       <Sidebar activeInfo={[item, setItem]} />
       <div className="app_content">
         <Navbar activeInfo={[item, setItem]} />
-        <Content />
+        <Content activeInfo={[item, setItem]} />
       </div>
     </div>
   );

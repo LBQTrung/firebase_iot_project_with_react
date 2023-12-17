@@ -177,4 +177,47 @@ html {
     height: calc(100vh - var(--navbar-height));
     background-color: #fff;
 }
+
+.content-navigation {
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navigation-button {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation-button-wrapper {
+    border: 1px solid #E5E7E8;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 60px;
+    text-decoration: none;
+    transition: transform 0.3s linear;
+}
+
+.navigation-button-wrapper:hover {
+    cursor: pointer;
+    box-shadow: 0 0 40px -8px rgb(0 0 0 / 16%),0 0 24px -16px rgb(0 0 0 / 16%);
+    transform: scale3d(1.03, 1.03, 1.08) translate3d(0.1rem, -0.25rem, 20rem);
+}
+
+.navigation-button-icon {
+    font-size: 100px;
+    color: #333;
+}
+
+.navigation-button-text {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #333;
+}
 /* End Content */ 

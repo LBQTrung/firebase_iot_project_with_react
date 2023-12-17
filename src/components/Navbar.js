@@ -30,10 +30,10 @@ const Navbar = (props) => {
             </div>
 
             <div className="logout">
-                <Link className="logout-text-link" to='/'>
+                <Link onClick={() => setItem('home')} className="logout-text-link" to='/'>
                     <span className="logout-text">Log Out</span>
                 </Link>
-                <Link className="logout-icon-link" to='/'>
+                <Link onClick={() => setItem('home')} className="logout-icon-link" to='/'>
                     <i className="bx bx-power-off logout-icon"></i>
                 </Link>
             </div>
