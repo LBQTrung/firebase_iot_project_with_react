@@ -5,7 +5,9 @@ import React from 'react';
 const Navbar = (props) => {
     const [item, setItem] = props.activeInfo
 
-    const parts = item.split('/')
+    const navWithoutSlash = item.slice(1)
+
+    const parts = navWithoutSlash.split('/')
 
     const linkArray = []
 

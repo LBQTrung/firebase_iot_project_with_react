@@ -101,9 +101,6 @@ html {
 .menu-item-text.active {
     color: var(--active-color);
 }
-
-
-
 /* End Sidebar */
 
 
@@ -220,4 +217,14 @@ html {
     margin-top: 10px;
     color: #333;
 }
+
+/* Begin Temperature and Humidity Realtime */
+.measure {
+
+}
+
+.measure-circle {
+    
+}
+/* End Temperature and Humidity Realtime */
 /* End Content */ 
