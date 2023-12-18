@@ -13,7 +13,9 @@ const Navbar = (props) => {
         linkArray.push(parts.slice(0, i).join("/"));
     }
 
-    const capitalizedStrings = parts.map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    let capitalizedStrings = parts.map(part => part.charAt(0).toUpperCase() + part.slice(1))
+
+    capitalizedStrings = capitalizedStrings.map(string => string.split('-').join(' '))
 
     const NavigationElements = capitalizedStrings.map((string, index) => (
         <React.Fragment>

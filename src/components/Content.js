@@ -13,14 +13,23 @@ const HomePageContent = (props) => {
     )
 }
 
+const ManageContent = (props) => {
+
+    return (
+        <div className="content-navigation">
+            <NavigationButton activeInfo={props.activeInfo} linkTo="manage/temperature" icon="bx bxs-hot" text="Manage" />
+            <NavigationButton activeInfo={props.activeInfo} linkTo="manage/humidity" icon="bx bx-water" text="Humidity" />
+            <NavigationButton activeInfo={props.activeInfo} linkTo="manage/air-quality" icon="bx bx-wind" text="Air quality" />
+        </div>
+    )
+}
+
 const Content = (props) => {
     return (
         <div className="content">
             <Routes>
                 <Route path="/" element={<HomePageContent activeInfo={props.activeInfo} />}></Route>
-                <Route path="/manage/temperature" element={<h1>Manage Temperature</h1>}></Route>
-                <Route path="/manage/humidity" element={<h1>Manage Humidity</h1>}></Route>
-                <Route path="/manage/air-quality" element={<h1>Manage Air Quality</h1>}></Route>
+                <Route path="/manage" element={<ManageContent activeInfo={props.activeInfo} />}></Route>
             </Routes>
         </div>
     )
