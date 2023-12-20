@@ -57,21 +57,13 @@ const ManageComponent = (props) => {
         }
     }, [data, counter])
 
-
-    const calculateDashOffset = (temperature) => {
-        const maxCounter = 50;
-        const percentage = (temperature / maxCounter) * 100;
-        const dashOffset = 472 - (472 * percentage) / 100;
-        return dashOffset;
-    };
-
     return (
         <div className='measure-wrapper'>
-            <h3 className='measure-text'>Temperature</h3>
+            <h3 className='measure-text'>{props.type == "temp" ? "Temperature" : "Humidity"}</h3>
             <div className="measure">
                 <div className="measure-cirle">
                     <div className="measure-circle-value">
-                        <div className="measure-value">{counter + "°C"}</div>
+                        <div className="measure-value">{counter}{props.type == "temp" ? "°C" : "%"}</div>
                     </div>
                 </div>
 
