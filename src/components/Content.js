@@ -31,7 +31,8 @@ const Content = (props) => {
             <Routes>
                 <Route path="/" element={<HomePageContent activeInfo={props.activeInfo} />}></Route>
                 <Route path="/manage" element={<ManageContent activeInfo={props.activeInfo} />}></Route>
-                <Route path="/manage/temperature" element={<ManageComponent />}></Route>
+                <Route path="/manage/temperature" element={<ManageComponent type="temp" />}></Route>
+                <Route path="/manage/humidity" element={<ManageComponent type="humidity" />}></Route>
             </Routes>
         </div>
     )

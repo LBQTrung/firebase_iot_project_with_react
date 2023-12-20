@@ -4,7 +4,7 @@ import Content from "./components/Content";
 import { useState } from "react"
 
 function App() {
-  const [item, setItem] = useState('home')
+  const [item, setItem] = useState('/home')
 
   return (
     <div className="app">
