@@ -9,10 +9,6 @@ const ManageComponent = (props) => {
     const [counter, setCounter] = useState(0)
     const [dashOffset, setDashOffset] = useState(472);
 
-    // Tạo mảng cho việc render nhiều chỉ số
-    const measureTypes = ['mean', 'std', 'min', 'max']
-    const measureValues = [23, 3, 17, 25]
-
     const [statisticValues, setStatisticValues] = useState({
         'mean': 0,
         'std': 0,
@@ -24,25 +20,9 @@ const ManageComponent = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const meanResponse = await fetch(`http://127.0.0.1:5000/mean-${props.type}`);
-                const meanData = await meanResponse.json();
-
-                const stdResponse = await fetch(`http://127.0.0.1:5000/std-${props.type}`);
-                const stdData = await stdResponse.json();
-
-                const minResponse = await fetch(`http://127.0.0.1:5000/min-${props.type}`);
-                const minData = await minResponse.json();
-
-                const maxResponse = await fetch(`http://127.0.0.1:5000/max-${props.type}`);
-                const maxData = await maxResponse.json();
-
-                // Lưu kết quả vào state
-                setStatisticValues({
-                    mean: meanData['mean'],
-                    std: stdData['std'],
-                    min: minData['min'],
-                    max: maxData['max'],
-                });
+                const statisticResponse = await fetch(`http://127.0.0.1:5000/statistic-${props.type}`);
+                const statisticData = await statisticResponse.json();
+                setStatisticValues(statisticData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

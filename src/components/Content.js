@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import NavigationButton from './NavigationButton.js'
 import ManageComponent from "./ManageComponent.js";
+import AnalyticsComponent from "./AnalyticsComponent.js";
 
 const HomePageContent = (props) => {
 
@@ -40,10 +41,14 @@ const Content = (props) => {
         <div className="content">
             <Routes>
                 <Route path="/" element={<HomePageContent activeInfo={props.activeInfo} />}></Route>
+
                 <Route path="/manage" element={<ManageContent activeInfo={props.activeInfo} />}></Route>
-                <Route path="/analytics" element={<AnalyticsContent activeInfo={props.activeInfo} />}></Route>
                 <Route path="/manage/temperature" element={<ManageComponent type="temp" />}></Route>
                 <Route path="/manage/humidity" element={<ManageComponent type="humidity" />}></Route>
+
+
+                <Route path="/analytics" element={<AnalyticsContent activeInfo={props.activeInfo} />}></Route>
+                <Route path="/analytics/temperature" element={<AnalyticsComponent />}></Route>
             </Routes>
         </div>
     )
