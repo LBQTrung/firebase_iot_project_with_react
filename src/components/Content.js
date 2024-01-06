@@ -48,7 +48,8 @@ const Content = (props) => {
 
 
                 <Route path="/analytics" element={<AnalyticsContent activeInfo={props.activeInfo} />}></Route>
-                <Route path="/analytics/temperature" element={<AnalyticsComponent />}></Route>
+                <Route path="/analytics/temperature" element={<AnalyticsComponent type="temp" />}></Route>
+                <Route path="/analytics/humidity" element={<AnalyticsComponent type="humidity" />}></Route>
             </Routes>
         </div>
     )

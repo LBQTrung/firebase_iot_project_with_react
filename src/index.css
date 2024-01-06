@@ -348,4 +348,17 @@ svg {
 }
 
 /* End Temperature and Humidity Realtime */
+
+
+/* Start Analysis */
+.line-graph-wrapper {
+    display: flex;
+}
+.line-graph-wrapper canvas{
+    margin: 0 auto;
+    width: 100%;
+    height: 500px !important;
+}
+
+/* End Analysis */
 /* End Content */ 

@@ -1,9 +1,9 @@
 import LineGraph from "./LineGraph"
 
-const AnalyticsComponent = () => {
+const AnalyticsComponent = ({ type }) => {
     return (
         <div>
-            {/* <LineGraph /> */}
+            <LineGraph type={type} />
         </div>
     )
 }
