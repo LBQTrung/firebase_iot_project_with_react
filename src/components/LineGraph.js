@@ -26,6 +26,7 @@ const LineGraph = ({ type }) => {
 
     return (
         <div className="line-graph-wrapper">
+            <h3>{type === "temp" ? "Temperature" : "Humidity"} Line Graph</h3>
             <Line
                 data={{
                     // x-axis label values
