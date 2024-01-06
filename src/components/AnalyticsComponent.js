@@ -1,6 +1,7 @@
 import LineGraph from "./LineGraph"
 import BarChart from "./BarChart"
 
+
 const AnalyticsComponent = ({ type }) => {
     return (
         <div>

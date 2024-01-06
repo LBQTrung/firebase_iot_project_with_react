@@ -22,18 +22,6 @@ const BarChart = ({ type }) => {
         fetchData();
     }, [type])
 
-    const data = {
-        labels: ['Mon', 'Tue', 'Wed'],
-        datasets: [
-            {
-                label: `Frequency`,
-                data: [3, 6, 9],
-                backgroundColor: `${type === "temp" ? "rgb(255, 99, 132)" : "#5FBDFF"}`,
-                borderColor: 'black',
-                borderWidth: 0.5,
-            }
-        ]
-    }
 
     return (
         <div className='line-graph-wrapper'>
@@ -42,7 +30,7 @@ const BarChart = ({ type }) => {
                 labels: labels,
                 datasets: [
                     {
-                        label: `${type === "temp" ? "Temperature" : "Humidity"}`,
+                        label: `Frequency`,
                         data: graphData,
                         backgroundColor: `${type === "temp" ? "rgb(255, 99, 132)" : "#5FBDFF"}`,
                         borderColor: 'black',

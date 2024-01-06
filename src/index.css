@@ -356,17 +356,16 @@ svg {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left:  20px;
+    padding-right: 20px;
 }
 
 .line-graph-wrapper h3 {
-    margin-top: 30px;
     font-size: 25px;
 }
 
 .line-graph-wrapper canvas{
-    margin: 0 auto;
-    width: 100%;
-    height: 500px !important;
+
 }
 
 /* End Analysis */
