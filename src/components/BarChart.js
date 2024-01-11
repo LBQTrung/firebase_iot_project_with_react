@@ -3,14 +3,14 @@ import { Bar } from 'react-chartjs-2'
 import { useEffect, useState } from "react";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend)
-const BarChart = ({ type }) => {
+const BarChart = ({ type, target }) => {
     const [graphData, setGraphData] = useState([])
     const [labels, setLabels] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const barReponse = await fetch(`http://127.0.0.1:5000/bar-chart-${type}`);
+                const barReponse = await fetch(`http://127.0.0.1:5000/${target}-${type}`);
                 const barData = await barReponse.json();
                 setGraphData(barData['data'])
                 setLabels(barData['labels'])
@@ -25,7 +25,7 @@ const BarChart = ({ type }) => {
 
     return (
         <div className='line-graph-wrapper'>
-            <h3>{type === "temp" ? "Temperature" : "Humidity"} Histogram</h3>
+            <h3>{target === "daily-average" ? "Daily Average" : ""} {type === "temp" ? "Temperature" : "Humidity"} Histogram</h3>
             <Bar data={{
                 labels: labels,
                 datasets: [

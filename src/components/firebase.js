@@ -7,13 +7,13 @@ import { getDatabase } from 'firebase/database'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBFicGLHKK9t7uCRquvzOzheDqy5XWqr3U",
-    authDomain: "testtemperature-a5658.firebaseapp.com",
-    databaseURL: "https://testtemperature-a5658-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "testtemperature-a5658",
-    storageBucket: "testtemperature-a5658.appspot.com",
-    messagingSenderId: "378498714326",
-    appId: "1:378498714326:web:84633bb7b58d0953361777"
+    apiKey: "AIzaSyBn2TsD7OoHzN5ymwuebiNqT451fizlb4o",
+    authDomain: "esp32-4757a.firebaseapp.com",
+    databaseURL: "https://esp32-4757a-default-rtdb.firebaseio.com",
+    projectId: "esp32-4757a",
+    storageBucket: "esp32-4757a.appspot.com",
+    messagingSenderId: "1080854412082",
+    appId: "1:1080854412082:web:c5b27bd59ccbcfa1f0f52b"
 };
 
 

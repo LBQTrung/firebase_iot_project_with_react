@@ -40,11 +40,12 @@ const ManageComponent = (props) => {
         const fetchData = async () => {
             try {
                 // Đường dẫn đến nút dữ liệu bạn muốn lấy
-                const dataRef = ref(database, props.type);
+                const dataRef = ref(database, props.type === 'temp' ? 'temperature' : 'humidity');
 
                 // Lắng nghe sự kiện 'value' để lấy dữ liệu khi có sự thay đổi
                 onValue(dataRef, (snapshot) => {
-                    const newData = snapshot.val();
+                    const newData = Math.round(snapshot.val());
+                    console.log(newData)
                     setData(newData);
                 });
             } catch (error) {
@@ -59,7 +60,7 @@ const ManageComponent = (props) => {
 
     // Animation quay quay :))
     useEffect(() => {
-        const maxCounter = props.type === "temp" ? 50 : 100;
+        const maxCounter = props.type === "temp" ? 60 : 110;
         const percentage = (data / maxCounter) * 100;
         const newDashOffset = 472 - (472 * percentage) / 100;
         setDashOffset(newDashOffset);

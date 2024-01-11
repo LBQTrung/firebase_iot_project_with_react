@@ -5,14 +5,14 @@ import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend)
 
-const LineGraph = ({ type }) => {
+const LineGraph = ({ type, target }) => {
     const [graphData, setGraphData] = useState([])
     const [labels, setLabels] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const lineReponse = await fetch(`http://127.0.0.1:5000/line-graph-${type}`);
+                const lineReponse = await fetch(`http://127.0.0.1:5000/${target}-${type}`);
                 const lineData = await lineReponse.json();
                 setGraphData(lineData['data'])
                 setLabels(lineData['labels'])
@@ -26,11 +26,11 @@ const LineGraph = ({ type }) => {
 
     return (
         <div className="line-graph-wrapper">
-            <h3>{type === "temp" ? "Temperature" : "Humidity"} Line Graph</h3>
+            <h3>{target === "daily-average" ? "Daily Average" : ""} {type === "temp" ? "Temperature" : "Humidity"} Line Graph</h3>
             <Line
                 data={{
                     // x-axis label values
-                    labels: labels.map(time => new Date(time * 1000)),
+                    labels: target === 'daily-average' ? labels : labels.map(time => new Date(time * 1000)),
                     datasets: [
                         {
                             label: `${type === "temp" ? "Temperature" : "Humidity"}`,
@@ -51,7 +51,7 @@ const LineGraph = ({ type }) => {
                             type: "category",
                             ticks: {
                                 source: 'labels',
-                                display: false,
+                                display: target === 'daily-average' ? true : false,
                             },
                         },
                         y: {
